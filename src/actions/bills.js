@@ -20,8 +20,9 @@ export function getBills() {
       		 }
       		 })     
 	 .then(res =>  res.json())
-	 .then(billsFound => {     	
-     	dispatch(receivedBills(billsFound.results[0].bills))                	
+	 .then(billsFound => {     	     	
+     	dispatch(receivedBills(billsFound.results[0].bills))
+     	console.log((receivedBills(billsFound.results[0].bills)))
 	  })   
   }
 }

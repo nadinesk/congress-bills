@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
 import billsReducer from './bills_reducer';
 
-const rootReducer =  combineReducers({    
-  bills: billsReducer
-  
+const rootReducer =  combineReducers({      
+  bills: billsReducer  
 });
 
 
