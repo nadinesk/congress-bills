@@ -13,7 +13,7 @@ const receivedBills = bills => {
 
 export function getBills() {      
   return function(dispatch){                    
-    return fetch('https://api.propublica.org/congress/v1/bills/search.json?query=megahertz', {
+    return fetch('https://api.propublica.org/congress/v1/115/senate/bills/passed.json', {
     		 headers: {
         		Accept: 'application/json',
         		'X-API-KEY': apiKey

@@ -124,6 +124,9 @@ move to actions
 
 ```
 
+move to its own component
+
+
 
 
 
