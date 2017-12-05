@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class BillsList extends Component {
+class HouseBillsList extends Component {
 
 	constructor(props) {
 		super(props)
@@ -11,7 +11,7 @@ class BillsList extends Component {
 	}
 
 	render() {
-		const bills_map = this.props.bills.map((bill) => (
+		const bills_map = this.props.houseBills.map((bill) => (
 			<ul>
 				<li key={bill.id} >
 	            	{bill.bill_id}
@@ -36,4 +36,4 @@ class BillsList extends Component {
 	}
 }
 
-export default BillsList
+export default HouseBillsList

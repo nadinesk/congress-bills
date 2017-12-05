@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import BillsList from './BillsList.js'
+import HouseBillsList from './HouseBillsList.js'
 
 import { getBills } from '../actions/bills.js'
 
@@ -10,21 +10,22 @@ import { getBills } from '../actions/bills.js'
 
 
 
-class MainBill extends Component {
+class House extends Component {
   
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
-    	this.props.fetchBills()	  
+    	this.props.fetchBills('house', 'introduced')	  
   }
 
 
   render() {
     return (
       <div>
-          <BillsList bills={this.props.bills}/>
+      	  <h1>House </h1> 
+          <HouseBillsList houseBills={this.props.bills}/>
       </div>
     );
   }
@@ -39,6 +40,6 @@ function mapStateToProps(state){
   return {bills: state.bills}
 }
 
-MainBill = connect(mapStateToProps, mapDispatchToProps)(MainBill)
+House = connect(mapStateToProps, mapDispatchToProps)(House)
 
-export default MainBill;
+export default House;
