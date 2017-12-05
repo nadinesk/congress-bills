@@ -126,7 +126,14 @@ move to actions
 
 move to its own component
 
+Outline structure and flow on paper with writing 
+
 react-router-dom
+
+
+
+Link 
+
 
 
 
