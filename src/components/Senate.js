@@ -10,6 +10,8 @@ import { BrowserRouter as Router,
           Link 
         } from 'react-router-dom'
 
+import {Grid, Row, Col} from 'react-bootstrap'
+
 
 class Senate extends Component {
   
@@ -29,13 +31,18 @@ class Senate extends Component {
 
     return (
       
-      <div>
-          <h1> Senate </h1> 
+      <Grid>
+        <Row> 
+          <Col md={12}>          
+            <h1 className="text-center"> Senate </h1> 
+          </Col>          
+        </Row> 
+
           <TypeLinks chamber={this.state.chamber}/>
 
                       {this.props.bills.length > 0 ?   <SenateBillsList senateBills={this.props.bills} blah='blah' />  : <h4>Nothing yet...</h4>}  
         
-      </div>
+      </Grid>
     );
   }
 }

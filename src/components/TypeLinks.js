@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-
 import HouseBillsList from './HouseBillsList.js'
-
 import { getBills } from '../actions/bills.js'
+import { DropdownButton, MenuItem, ButtonToolbar, Button } from 'react-bootstrap'
 
 
 
@@ -69,16 +68,16 @@ class TypeLinks extends Component {
                                     '80-100 most recent'
     return (
       <div>      	  
-      	  <ul>
-            <li  style={{cursor:'pointer'}} onClick={this.handleOnClick.bind(this)}>Introduced</li>
-            <li  style={{cursor:'pointer'}} onClick={this.handleOnClick.bind(this)}>Updated</li>
-            <li  style={{cursor:'pointer'}} onClick={this.handleOnClick.bind(this)}>Active</li>
-            <li  style={{cursor:'pointer'}} onClick={this.handleOnClick.bind(this)}>Passed</li>
-            <li  style={{cursor:'pointer'}} onClick={this.handleOnClick.bind(this)}>Enacted</li>
-            <li  style={{cursor:'pointer'}} onClick={this.handleOnClick.bind(this)}>Vetoed</li>          
-          </ul>
+      	  <DropdownButton title='Bill Type'>
+            <MenuItem onClick={this.handleOnClick.bind(this)}>Introduced</MenuItem>
+            <MenuItem onClick={this.handleOnClick.bind(this)}>Updated</MenuItem>
+            <MenuItem onClick={this.handleOnClick.bind(this)}>Active</MenuItem>
+            <MenuItem onClick={this.handleOnClick.bind(this)}>Passed</MenuItem>
+            <MenuItem onClick={this.handleOnClick.bind(this)}>Enacted</MenuItem>
+            <MenuItem onClick={this.handleOnClick.bind(this)}>Vetoed</MenuItem>          
+          </DropdownButton>
 
-          <ul>
+          <ButtonToolbar>
 
             <li  style={{cursor:'pointer'}} className="0" onClick={this.handleOnNumClick.bind(this)}>20 most recent</li>
             <li  style={{cursor:'pointer'}} className="20" onClick={this.handleOnNumClick.bind(this)}>20-40</li>

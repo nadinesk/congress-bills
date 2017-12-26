@@ -9,7 +9,7 @@ import { BrowserRouter as Router,
           Route, 
           Link 
         } from 'react-router-dom'
-import { NavBar } from 'react-router-dom'
+import { Navbar, Nav, NavItem } from 'react-bootstrap'
 
 
 
@@ -18,28 +18,32 @@ import { NavBar } from 'react-router-dom'
 class App extends Component {
 
   render() {
-    return (
-      <div>
+    return (    
+      <div>  
         <Router>
           <div>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/senate">Senate</Link></li>
-              <li><Link to="/house">House</Link></li>
-              
-              
-            </ul>
+            <Navbar>
+              <Navbar.Header>
+                <Navbar.Brand> 
+                  <a href="/">115th Congress</a> 
+                </Navbar.Brand>
+              </Navbar.Header>
 
-            <hr />
+              <Nav>                
+                <NavItem><Link to="/senate">Senate</Link></NavItem>
+                <NavItem><Link to="/house">House</Link></NavItem>
+              </Nav>
+            </Navbar>     
 
             <Route exact path="/" component={Senate}/>
             <Route exact path="/senate" component={Senate}/>
-            <Route exact path="/house" component={House}/>            
+            <Route exact path="/house" component={House}/>       
             
-          </div>
-        </Router>
-        
+          </div>      
+        </Router>      
       </div>
+          
+        
     );
   }
 }
