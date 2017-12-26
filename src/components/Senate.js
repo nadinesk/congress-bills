@@ -39,7 +39,8 @@ class Senate extends Component {
         </Row> 
           <TypeLinks chamber={this.state.chamber}/>
 
-                      {this.props.bills.length > 0 ?   <SenateBillsList senateBills={this.props.bills} blah='blah' />  : <h4>Nothing yet...</h4>}  
+                      {this.props.bills.length > 0 ?   <SenateBillsList senateBills={this.props.bills} blah='blah' />  : <h4>Nothing yet...</h4>}
+          <footer>115th Congress </footer> 
         
       </Grid>
     );
