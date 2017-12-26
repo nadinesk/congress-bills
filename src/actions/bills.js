@@ -11,9 +11,9 @@ const receivedBills = bills => {
 }
 
 
-export function getBills(chamber, type) {      
+export function getBills(chamber, type,offset) {      
   return function(dispatch){                    
-    return fetch(`https://api.propublica.org/congress/v1/115/${chamber}/bills/${type}.json`, {
+    return fetch(`https://api.propublica.org/congress/v1/115/${chamber}/bills/${type}.json?offset=${offset}`, {
     		 headers: {
         		Accept: 'application/json',
         		'X-API-KEY': apiKey
