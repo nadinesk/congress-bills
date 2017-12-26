@@ -22,6 +22,31 @@
   font-size: large;
 }
 
+.bill-id {
+  font-weight: bold;
+}
+
+ul {
+  list-style: none; 
+}
+
+li {
+  padding: 3px;
+}
+
+.bill-details {
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  margin: 0px;  
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.bill-detail-title {
+  font-weight: bold;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import HouseBillsList from './HouseBillsList.js'
 import TypeLinks from './TypeLinks.js'
 import { getBills } from '../actions/bills.js'
+import {Grid, Row, Col} from 'react-bootstrap'
 
 
 
@@ -30,13 +31,17 @@ class House extends Component {
 
   render() {
     return (
-      <div>
-      	  <h1>House </h1> 
+      <Grid>
+        <Row> 
+          <Col md={12}>          
+      	   <h1 className="text-center">House </h1> 
+           </Col>          
+        </Row> 
       	  <TypeLinks chamber={this.state.chamber}/>
           
 
             {this.props.bills.length > 0 ? <HouseBillsList houseBills={this.props.bills}/>  : <h4>Nothing yet...</h4>}  
-      </div>
+      </Grid>
     );
   }
 }

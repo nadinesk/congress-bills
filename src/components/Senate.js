@@ -37,7 +37,6 @@ class Senate extends Component {
             <h1 className="text-center"> Senate </h1> 
           </Col>          
         </Row> 
-
           <TypeLinks chamber={this.state.chamber}/>
 
                       {this.props.bills.length > 0 ?   <SenateBillsList senateBills={this.props.bills} blah='blah' />  : <h4>Nothing yet...</h4>}  

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import HouseBillsList from './HouseBillsList.js'
 import { getBills } from '../actions/bills.js'
-import { DropdownButton, MenuItem, ButtonToolbar, Button } from 'react-bootstrap'
+import { Row, DropdownButton, MenuItem, ButtonToolbar, Button, ToggleButtonGroup, ToggleButton } from 'react-bootstrap'
 
 
 
@@ -15,7 +15,6 @@ class TypeLinks extends Component {
      this.state = { 
             clicked: 'introduced',
             offsetNum: '0'
-            
     }   
     
   }
@@ -32,6 +31,8 @@ class TypeLinks extends Component {
       })
 
 
+
+
       this.props.fetchBills(this.props.chamber, typeClicked,this.state.offsetNum)
 
       
@@ -42,15 +43,14 @@ class TypeLinks extends Component {
       
       event.preventDefault()         
 
-      const offsetNum = event.target.className
+      const offsetNum = event.target.classList[0]
 
       this.setState({
         offsetNum: offsetNum
       })
 
       console.log('this.state.clicked', this.state.clicked)
-
-
+      
 
       this.props.fetchBills(this.props.chamber, this.state.clicked,offsetNum)
      
@@ -67,8 +67,11 @@ class TypeLinks extends Component {
                                   (this.state.offsetNum == '60') ? '60-80 most recent' : 
                                     '80-100 most recent'
     return (
-      <div>      	  
-      	  <DropdownButton title='Bill Type'>
+      
+      <Row>      	  
+      <h2>{this.state.clicked.toUpperCase()} - {mostRecentNum} </h2> 
+      	  <ButtonToolbar>
+          <DropdownButton title='Bill Type'>
             <MenuItem onClick={this.handleOnClick.bind(this)}>Introduced</MenuItem>
             <MenuItem onClick={this.handleOnClick.bind(this)}>Updated</MenuItem>
             <MenuItem onClick={this.handleOnClick.bind(this)}>Active</MenuItem>
@@ -77,20 +80,19 @@ class TypeLinks extends Component {
             <MenuItem onClick={this.handleOnClick.bind(this)}>Vetoed</MenuItem>          
           </DropdownButton>
 
-          <ButtonToolbar>
+       
 
-            <li  style={{cursor:'pointer'}} className="0" onClick={this.handleOnNumClick.bind(this)}>20 most recent</li>
-            <li  style={{cursor:'pointer'}} className="20" onClick={this.handleOnNumClick.bind(this)}>20-40</li>
-            <li  style={{cursor:'pointer'}} className="40" onClick={this.handleOnNumClick.bind(this)}>40-60</li>
-            <li  style={{cursor:'pointer'}} className="60" onClick={this.handleOnNumClick.bind(this)}>60-80</li>
-            <li  style={{cursor:'pointer'}} className="80" onClick={this.handleOnNumClick.bind(this)}>80-100</li>      
-          </ul>
-
-
-          <h2>{this.state.clicked}</h2> 
-          <h2>{mostRecentNum}</h2> 
+            <Button bsStyle="primary"  className="0" onClick={this.handleOnNumClick.bind(this)}>20 most recent</Button>
+            <Button bsStyle="primary"  className="20" onClick={this.handleOnNumClick.bind(this)}>20-40</Button>
+            <Button bsStyle="primary" className="40" onClick={this.handleOnNumClick.bind(this)}>40-60</Button>
+            <Button bsStyle="primary"    className="60" onClick={this.handleOnNumClick.bind(this)}>60-80</Button>
+            <Button bsStyle="primary"    className="80" onClick={this.handleOnNumClick.bind(this)}>80-100</Button>      
           
-      </div>
+        </ButtonToolbar>
+
+      <br />     
+      </Row>
+      
     );
   }
 }
