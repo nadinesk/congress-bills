@@ -20,7 +20,7 @@ export function getBills(chamber, type,offset) {
         		'X-API-KEY': apiKey, 
              "Access-Control-Allow-Origin": "*",
       		 }
-    }, {mode: 'no-cors'})
+    })
 	 .then(res =>  res.json())
 	 .then(billsFound => {     	     	
      	dispatch(receivedBills(billsFound.results[0].bills))
