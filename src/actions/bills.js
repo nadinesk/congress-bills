@@ -14,13 +14,13 @@ const receivedBills = bills => {
 export function getBills(chamber, type,offset) {      
   return function(dispatch){                    
     return fetch(`https://api.propublica.org/congress/v1/115/${chamber}/bills/${type}.json?offset=${offset}`, 
-    {
-    		 headers: {
+    {    		
+         headers: {
         		Accept: 'application/json',                        
             'Content-Type': 'application/json',
         		'X-API-KEY': apiKey, 
       		 }
-    })
+    },{mode: 'no-cors'})
 	 .then(res =>  res.json())
 	 .then(billsFound => {     	     	
      	dispatch(receivedBills(billsFound.results[0].bills))
