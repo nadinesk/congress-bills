@@ -17,10 +17,10 @@ export function getBills(chamber, type,offset) {
     {    		
          headers: {
         		Accept: 'application/json',                        
-            'Content-Type': 'application/json',
+           
         		'X-API-KEY': apiKey, 
       		 }
-    },{mode: 'no-cors'})
+    },{mode: 'cors'})
 	 .then(res =>  res.json())
 	 .then(billsFound => {     	     	
      	dispatch(receivedBills(billsFound.results[0].bills))
