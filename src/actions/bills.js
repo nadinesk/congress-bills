@@ -16,11 +16,10 @@ export function getBills(chamber, type,offset) {
     return fetch(`https://api.propublica.org/congress/v1/115/${chamber}/bills/${type}.json?offset=${offset}`, 
     {    		
          headers: {
-        		Accept: 'application/json',                        
-           
-        		'X-API-KEY': apiKey, 
+        		Accept: 'application/json',                                    
+        		'X-API-KEY': apiKey,             
       		 }
-    },{mode: 'cors'})
+    })
 	 .then(res =>  res.json())
 	 .then(billsFound => {     	     	
      	dispatch(receivedBills(billsFound.results[0].bills))
