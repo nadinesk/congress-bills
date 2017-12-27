@@ -16,6 +16,7 @@ export function getBills(chamber, type,offset) {
     return fetch(`https://api.propublica.org/congress/v1/115/${chamber}/bills/${type}.json?offset=${offset}`, {
     		 headers: {
         		Accept: 'application/json',
+            Access-Control-Allow-Origin: *
         		'X-API-KEY': apiKey
       		 }
       		 })     
