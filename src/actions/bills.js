@@ -17,9 +17,8 @@ export function getBills(chamber, type,offset) {
     {
     		 headers: {
         		Accept: 'application/json',                        
+            'Content-Type': 'application/json',
         		'X-API-KEY': apiKey, 
-    
-             
       		 }
     })
 	 .then(res =>  res.json())
