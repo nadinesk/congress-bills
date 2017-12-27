@@ -27,12 +27,9 @@
     "redux-devtools": "^3.4.1"
   },
 
-  "proxy": {
-    "/api": {
-      "target": "https://gentle-mountain-48679.herokuapp.com/",
-      "pathRewrite": {
-        "^/api": "/"
-      }
+"proxies": {
+    "/api/": {
+      "origin": "https://gentle-mountain-48679.herokuapp.com/"
     }
   }
 }
