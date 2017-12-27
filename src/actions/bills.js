@@ -17,7 +17,8 @@ export function getBills(chamber, type,offset) {
     {
     		 headers: {
         		Accept: 'application/json',            
-        		'X-API-KEY': apiKey
+        		'X-API-KEY': apiKey, 
+             "Access-Control-Allow-Origin": "*",
       		 }
     }, {mode: 'no-cors'})
 	 .then(res =>  res.json())
