@@ -19,6 +19,7 @@ const receivedBills = bills => {
 
 
 export function getBills(chamber, type,offset) {      
+  debugger
   return function(dispatch){                    
     return fetch(`https://api.propublica.org/congress/v1/115/${chamber}/bills/${type}.json?offset=${offset}`, 
     {    		
