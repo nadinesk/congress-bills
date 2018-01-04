@@ -24,7 +24,7 @@ class Senate extends Component {
   }
 
   componentDidMount() {
-    	this.props.fetchBills('senate', 'introduced')	  
+    	this.props.fetchBills('senate', 'introduced',0)	  
   }
 
   render() {
