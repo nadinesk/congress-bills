@@ -35,7 +35,7 @@ class Senate extends Component {
       <Grid>
         <Row> 
           <Col md={12}>          
-            <h1 className="text-center"> Senateasdfasdfasfa </h1> 
+            <h1 className="text-center"> Senate</h1> 
           </Col>          
         </Row> 
           <TypeLinks chamber={this.state.chamber}/>
